@@ -23,6 +23,7 @@
 #include <sys/types.h>
 #include <sys/ioctl.h>
 #include <cutils/properties.h>
+#include <utils/RefBase.h>
 
 #include <linux/android_pmem.h>
 
@@ -73,14 +74,12 @@ base: {
              author: "The Android Open Source Project",
              methods: &gralloc_module_methods,
              dso: 0,
-             reserved: {0},
             },
     registerBuffer: gralloc_register_buffer,
     unregisterBuffer: gralloc_unregister_buffer,
     lock: gralloc_lock,
     unlock: gralloc_unlock,
     perform: gralloc_perform,
-    reserved_proc: {0},
       },
 framebuffer: 0,
 fbFormat: 0,
